@@ -2,7 +2,7 @@
 
 **Instagram Clone** is a photo sharing app similar to Instagram but using Parse as its backend.
 
-Time spent: **3** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
@@ -35,7 +35,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I had some trouble adding the Instagram logo and formattting it to be displayed properly in the app.
 
 ## Open-source libraries used
 
