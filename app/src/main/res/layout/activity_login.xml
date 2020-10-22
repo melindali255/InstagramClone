@@ -8,6 +8,12 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
+        />
+
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
@@ -35,5 +41,16 @@
         android:layout_below="@+id/etPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
-        android:text="Login" />
+        android:text="Login"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Sign Up"
+        android:background="@android:color/holo_green_light"
+        android:textColor="@android:color/white"/>
 </LinearLayout>
