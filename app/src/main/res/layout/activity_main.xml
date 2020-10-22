@@ -8,6 +8,20 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/ivPostImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/btnCaptureImage"
+        android:layout_centerHorizontal="true"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <EditText
         android:id="@+id/etDescription"
         android:layout_width="match_parent"
@@ -23,19 +37,11 @@
         android:layout_centerHorizontal="true"
         android:text="Take Picture" />
 
-    <ImageView
-        android:id="@+id/ivPostImage"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@+id/btnCaptureImage"
-        android:layout_centerHorizontal="true"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:text="Post" />
 
     <Button
         android:id="@+id/btnLogOut"
