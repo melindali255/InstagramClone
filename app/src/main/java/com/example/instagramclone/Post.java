@@ -6,6 +6,11 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+import java.util.Date;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 @ParseClassName("Post")
 public class Post extends ParseObject {
 
@@ -38,4 +43,5 @@ public class Post extends ParseObject {
         put(KEY_USER, user);
     }
 
+    public Date getPostCreatedAt() { return getCreatedAt(); }
 }

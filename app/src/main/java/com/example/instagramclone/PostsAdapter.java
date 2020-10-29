@@ -1,6 +1,9 @@
 package com.example.instagramclone;
 
 import android.content.Context;
+import android.media.Image;
+import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +13,12 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
 
+import java.text.DateFormat;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,23 +62,33 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
+        private ImageView ivProfilePicture;
         private TextView tvUsername;
         private ImageView ivImage;
         private TextView tvDescription;
+        private TextView tvTimestamp;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            ivProfilePicture = itemView.findViewById(R.id.ivProfilePicture);
             tvUsername = itemView.findViewById(R.id.tvUsername);
             ivImage = itemView.findViewById(R.id.ivImage);
             tvDescription = itemView.findViewById(R.id.tvDescription);
+            tvTimestamp = itemView.findViewById(R.id.tvTimestamp);
         }
 
         public void bind(Post post) {
-            tvDescription.setText(post.getDescription());
+            ParseFile profileImage = post.getUser().getParseFile("profilePicture");
+            if (profileImage != null) {
+                Glide.with(context).load(post.getUser().getParseFile("profilePicture").getUrl()).into(ivProfilePicture);
+            }
+            tvDescription.setText(post.getUser().getUsername() + " " + post.getDescription());
             tvUsername.setText(post.getUser().getUsername());
             ParseFile image = post.getImage();
             if (image != null)
                 Glide.with(context).load(post.getImage().getUrl()).into(ivImage);
+            Date date = post.getPostCreatedAt();
+            tvTimestamp.setText(DateUtils.getRelativeTimeSpanString(date.getTime()));
         }
     }
 }
