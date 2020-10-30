@@ -2,37 +2,18 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-<!--    <selector-->
-<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--        app:showAsAction="always"-->
-<!--        android:id="@+id/action_home"-->
-<!--        android:visible="true"-->
-<!--        >-->
-<!--    <selector xmlns:android="http://schemas.android.com/apk/res/android">-->
-        <item
-            android:id="@+id/action_home"
-            android:icon="@drawable/home_filled_icon"
-            android:state_checked="true"
-            android:title="Home"
-            app:showAsAction="ifRoom" />
-<!--        <item-->
-<!--            android:drawable="@drawable/home_outline_icon"-->
-<!--            android:state_checked="false"-->
-<!--            android:title="Home"-->
-<!--            android:visible="true"-->
-<!--            app:showAsAction="ifRoom"-->
-<!--            />-->
-<!--    </selector>-->
-
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/home_selector"
+        android:title="@string/home" />
     <item
         android:id="@+id/action_compose"
-        android:icon="@drawable/post_filled_icon"
+        android:icon="@drawable/compose_selector"
         android:title="@string/compose"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_profile"
-        android:icon="@drawable/ic_person_black_24dp"
+        android:icon="@drawable/profile_selector"
         android:title="@string/profile"
         app:showAsAction="always" />
 </menu>

@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.example.instagramclone.fragments.ComposeFragment;
 import com.example.instagramclone.fragments.PostsFragment;
 import com.example.instagramclone.fragments.ProfileFragment;
+import com.example.instagramclone.fragments.ProfileGalleryFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-//                menu = bottomNavigationView.getMenu();
+                menu = bottomNavigationView.getMenu();
 //                menu.findItem(R.id.action_home).setIcon(Drawable.createFromPath("@drawable/heart_filled_icon"));
 
                 Fragment fragment;
@@ -63,13 +64,14 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.action_home:
                         fragment = new PostsFragment();
-//                        menuItem.setIcon(Drawable.createFromPath("@drawable/heart_filled_icon"));
+//                        menuItem.setIcon(Drawable.createFromPath("@drawable/heart_filled_icon/heart_filled_icon.png"));
                         break;
                     case R.id.action_compose:
                         fragment = new ComposeFragment();
                         break;
                     case R.id.action_profile:
                         fragment = new ProfileFragment();
+//                        fragment = new ProfileGalleryFragment();
                         break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
