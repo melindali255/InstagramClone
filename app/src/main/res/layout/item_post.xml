@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp"
+    android:layout_marginBottom="20dp"
     android:orientation="vertical">
 
     <ImageView
@@ -60,16 +60,16 @@
         android:layout_marginEnd="11dp"
         app:srcCompat="@drawable/save_outline_icon" />
 
-    <TextView
-        android:id="@+id/tvUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/ivProfilePicture"
+        android:layout_width="65dp"
+        android:layout_height="62dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="29dp"
-        android:layout_toEndOf="@+id/ivProfilePicture"
-        android:text="melinda"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="11dp"
+        android:scaleType="centerCrop"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvDescription"
@@ -79,7 +79,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="8dp"
@@ -94,18 +94,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvDescription"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
         android:text="3 hours ago" />
 
-    <ImageView
-        android:id="@+id/ivProfilePicture"
-        android:layout_width="65dp"
-        android:layout_height="62dp"
-        android:layout_alignParentStart="true"
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="11dp"
-        android:scaleType="centerCrop"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="29dp"
+        android:layout_toEndOf="@+id/ivProfilePicture"
+        android:text="melinda"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold" />
 </RelativeLayout>
