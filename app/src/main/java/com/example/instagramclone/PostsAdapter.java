@@ -2,6 +2,8 @@ package com.example.instagramclone;
 
 import android.content.Context;
 import android.media.Image;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -82,7 +84,12 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             if (profileImage != null) {
                 Glide.with(context).load(post.getUser().getParseFile("profilePicture").getUrl()).into(ivProfilePicture);
             }
-            tvDescription.setText(post.getUser().getUsername() + " " + post.getDescription());
+
+            SpannableStringBuilder descriptionString = new SpannableStringBuilder(post.getUser().getUsername() + " " + post.getDescription());
+            descriptionString.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 0, post.getUser().getUsername().length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+//            tvDescription.setText(post.getUser().getUsername() + " " + post.getDescription());
+            tvDescription.setText(descriptionString);
+
             tvUsername.setText(post.getUser().getUsername());
             ParseFile image = post.getImage();
             if (image != null)
